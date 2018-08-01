@@ -20,3 +20,6 @@
 
 
 上面只是理想的测试结果，大家输入一些字之后会发现很多不理想的情况(～￣▽￣)～
+
+## 参考：
+代码主要来在：https://github.com/jinfagang/tensorflow_poems
