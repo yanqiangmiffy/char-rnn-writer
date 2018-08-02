@@ -22,4 +22,8 @@
 上面只是理想的测试结果，大家输入一些字之后会发现很多不理想的情况(～￣▽￣)～
 
 ## 参考：
-代码主要来在：https://github.com/jinfagang/tensorflow_poems
+代码主要来自大神的：https://github.com/jinfagang/tensorflow_poems
+
+自己主要是将char rnn实现了一遍，学习和总结了下其原理，然后将训练模型做成一个小应用
+
+效果如下：
