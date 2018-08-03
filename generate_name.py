@@ -5,8 +5,8 @@ import numpy as np
 
 start_token = 'B'
 end_token = 'E'
-model_dir = './result/'
-corpus_file = './data/poems.txt'
+model_dir = 'result/name'
+corpus_file = 'data/names.txt'
 
 lr = 0.0002
 
@@ -21,15 +21,15 @@ def to_word(predict, vocabs):
         return vocabs[sample]
 
 
-def gen_poem(begin_word):
+def gen_name(begin_word):
     batch_size = 1
     print('## loading corpus from %s' % model_dir)
-    poems_vector, word_int_map, vocabularies = build_dataset(corpus_file)
+    names_vector, word_int_map, vocabularies = build_dataset(corpus_file)
 
     input_data = tf.placeholder(tf.int32, [batch_size, None])
 
     end_points = char_rnn(model='lstm', input_data=input_data, output_data=None, vocab_size=len(
-        vocabularies), rnn_size=128, num_layers=2, batch_size=64, learning_rate=lr)
+        vocabularies), rnn_size=128, num_layers=2, batch_size=128, learning_rate=lr)
 
     saver = tf.train.Saver(tf.global_variables())
     init_op = tf.group(tf.global_variables_initializer(), tf.local_variables_initializer())
@@ -47,11 +47,11 @@ def gen_poem(begin_word):
             word = begin_word
         else:
             word = to_word(predict, vocabularies)
-        poem_ = ''
+        name_ = ''
 
         i = 0
         while word != end_token:
-            poem_ += word
+            name_ += word
             i += 1
             if i >= 24:
                 break
@@ -61,16 +61,15 @@ def gen_poem(begin_word):
                                              feed_dict={input_data: x, end_points['initial_state']: last_state})
             word = to_word(predict, vocabularies)
 
-        return poem_
+        return name_
 
 
-def pretty_print_poem(poem_):
-    poem_sentences = poem_.split('。')
-    for s in poem_sentences:
-        if s != '' and len(s) > 10:
-            print(s + '。')
+def pretty_print_name(name_):
+    name= "".join([word for word in name_ if word!='B'])
+    print(name)
+    
 
 if __name__ == '__main__':
-    begin_char = input('## please input the first character:')
-    poem = gen_poem(begin_char)
-    pretty_print_poem(poem_=poem)
+    begin_char = input('## 请输入您的姓氏:')
+    name = gen_name(begin_char)
+    pretty_print_name(name_=name)

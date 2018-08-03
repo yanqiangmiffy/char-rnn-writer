@@ -49,6 +49,44 @@ def build_dataset(filename):
     # print(poems_vector)
     return poems_vector,word_to_int,words
 
+def build_name_dataset(filename):
+    """
+    构建数据集 词典以及名字向量
+    :param filename: 名字文件
+    :return:
+    """
+    poems=[]
+    no_char = '_(（《['
+    with open(filename,'r',encoding='utf-8') as in_data:
+        for poem in in_data.readlines():
+            try:
+                content=poem.strip() # 内容
+                content=content.replace(' ','') # 去除空格
+
+                if len(content)<2 or len(content)>5: # 将不符合规定长度的去掉
+                    continue
+                content=start_token+content+end_token
+                poems.append(content)
+            except ValueError as e:
+                print(e)
+    # print(poems)
+    words_list=[word for poem in poems for word in poem] # 两层嵌套，插眼
+    # print(words_list)
+    # print(len(set(words_list)))
+    counter=Counter(words_list).most_common()
+    # print(counter)
+    words,_=zip(*counter)
+    words = words + (' ',)
+    # print(words)
+    word_to_int=dict(zip(words,range(len(words))))
+    # print(word_to_int)
+    # int_to_word=dict(zip(word_to_int.values(),word_to_int.keys()))
+    # print(int_to_word)
+
+    poems_vector = [list(map(lambda word: word_to_int.get(word, len(words)), poem)) for poem in poems] # 默认值为空 len(words) 46 ' '
+
+    # print(poems_vector)
+    return poems_vector,word_to_int,words
 # poems_vector,word_to_int,words=build_dataset('data/demo.txt')
 
 def generate_batch(batch_size,poems_vector,word_to_int):

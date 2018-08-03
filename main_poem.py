@@ -21,7 +21,7 @@ def int_to_word(predict, vocabs):
 # 基本设置
 start_token = 'B'
 end_token = 'E'
-result_dir = 'result'
+result_dir = 'result/poem'
 corpus_file = 'data/poems.txt'
 lr = 0.0002
 
@@ -69,8 +69,11 @@ def write():
         word = int_to_word(predict, vocabularies)
 
     return jsonify(result=poem_)
+
+
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('poem_index.html')
+
 if __name__ == '__main__':
     app.run(debug=True,port=5000)
