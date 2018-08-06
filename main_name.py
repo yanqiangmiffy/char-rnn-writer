@@ -1,7 +1,7 @@
 import numpy as np
 import tensorflow as tf
 from model import char_rnn
-from utils import build_dataset
+from utils import build_name_dataset
 from flask import Flask,jsonify,render_template,request
 
 app=Flask(__name__)
@@ -26,7 +26,7 @@ corpus_file = 'data/names.txt'
 lr = 0.0002
 
 print("正在从%s加载数据...." % corpus_file)
-poems_vector,word_to_int,vocabularies=build_dataset(corpus_file)
+poems_vector,word_to_int,vocabularies=build_name_dataset(corpus_file)
 
 # 初始化
 print("正在从%s加载训练结果" % result_dir)

@@ -1,6 +1,6 @@
 import tensorflow as tf
 from model import char_rnn
-from utils import build_dataset
+from utils import build_name_dataset
 import numpy as np
 
 start_token = 'B'
@@ -24,7 +24,7 @@ def to_word(predict, vocabs):
 def gen_name(begin_word):
     batch_size = 1
     print('## loading corpus from %s' % model_dir)
-    names_vector, word_int_map, vocabularies = build_dataset(corpus_file)
+    names_vector, word_int_map, vocabularies = build_name_dataset(corpus_file)
 
     input_data = tf.placeholder(tf.int32, [batch_size, None])
 
