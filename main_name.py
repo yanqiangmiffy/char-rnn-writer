@@ -68,9 +68,9 @@ def write():
                                          feed_dict={input_data: x, end_points['initial_state']: last_state})
         word = int_to_word(predict, vocabularies)
 
-    return jsonify(result=poem_)
+    return jsonify(result=poem_.replace('B','').replace(' ',''))
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('name_index.html')
 if __name__ == '__main__':
     app.run(debug=True,port=5000)

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{url_for('static',filename='css/floating-labels.css')}}">
     <script type="text/javascript" src="{{url_for('static',filename='js/jquery-3.3.1.min.js')}}"></script>
     <script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
-    <title>Char-RNN-Writer</title>
+    <title>Char-RNN-Name-Generation</title>
     <script type=text/javascript>
         $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
     </script>
@@ -23,7 +23,7 @@
         <form class="form-signin">
             <div class="text-center mb-4">
                 <h1 class="h3 mb-3 font-weight-normal">Char-RNN-Name-Generation</h1>
-                <p>Char-RNN模型是从字符的维度上，让机器生成文本，即通过已经观测到的字符出发，预测下一个字符出现的概率，也就是对序列数据的推测。<code>写诗项目</code>：<a
+                <p>Char-RNN模型是从字符的维度上，让机器生成文本，即通过已经观测到的字符出发，预测下一个字符出现的概率，也就是对序列数据的推测。<code>生成名字</code>：<a
                         href="https://github.com/yanqiangmiffy/char-rnn-writer">GitHub传送门</a></p>
             </div>
 

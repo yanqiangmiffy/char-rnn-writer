@@ -34,4 +34,4 @@
 ## 生成名字
 自己爬取了一些名字，这个模型也可以用来生成名字,训练命令如下:
 
-`python train.py --batch_size 128 --result_dir 'result/name' --model_prefix 'names' --epochs 20 --file_path 'data/names.txt'`
+`python train.py --batch_size 64 --result_dir 'result/name' --model_prefix 'names' --epochs 50 --file_path 'data/names.txt'`
