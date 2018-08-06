@@ -1,7 +1,7 @@
 # char-rnn-writer :hamster:
 基于Char RNN实现的作诗Web应用,效果看起来还`o**k`
 
-## 训练结果：
+## 1 生成古诗：
 
 **君**
 
@@ -31,7 +31,7 @@
 ![](https://github.com/yanqiangmiffy/char-rnn-writer/blob/master/assets/result1.png)
 ![](https://github.com/yanqiangmiffy/char-rnn-writer/blob/master/assets/result2.png)
 
-## 生成名字
+## 2 生成名字
 
 自己从[名字大全](http://xm.99166.com/mzdq/)这个网站爬取所有形式组成的名字，爬取代码在`data\spider`目录下
 ![](https://github.com/yanqiangmiffy/char-rnn-writer/blob/master/assets/name.png)
