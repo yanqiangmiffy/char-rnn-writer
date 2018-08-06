@@ -1,4 +1,4 @@
-# char-rnn-writer
+# char-rnn-writer :hamster:
 基于Char RNN实现的作诗Web应用,效果看起来还`o**k`
 
 ## 训练结果：
