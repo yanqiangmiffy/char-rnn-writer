@@ -41,4 +41,5 @@
 `python train.py --batch_size 64 --result_dir 'result/name' --model_prefix 'names' --epochs 50 --file_path 'data/names.txt'`
 
 测试结果
+
 ![](https://github.com/yanqiangmiffy/char-rnn-writer/blob/master/assets/result3.png)
