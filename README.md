@@ -1,7 +1,7 @@
 # char-rnn-writer
 基于Char RNN实现的作诗Web应用,效果看起来还`o**k`
 
-# 训练结果：
+## 训练结果：
 
 **君**
 
@@ -26,7 +26,7 @@
 
 自己主要是将char rnn实现了一遍，学习和总结了下其原理，然后将训练模型做成一个小应用
 
-效果如下：
+**测试效果如下**：
 
 ![](https://github.com/yanqiangmiffy/char-rnn-writer/blob/master/assets/result1.png)
 ![](https://github.com/yanqiangmiffy/char-rnn-writer/blob/master/assets/result2.png)
@@ -40,6 +40,6 @@
 
 `python train.py --batch_size 64 --result_dir 'result/name' --model_prefix 'names' --epochs 50 --file_path 'data/names.txt'`
 
-测试结果
+**测试效果如下**：
 
 ![](https://github.com/yanqiangmiffy/char-rnn-writer/blob/master/assets/result3.png)
