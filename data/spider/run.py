@@ -16,7 +16,7 @@ for i in range(501):
         # names=html.xpath('//div[@class="wrapper"]/div[@class="pagebody"]/div[@class="pleft"]/div[@class="pleftmain"]/div[@class="nameall margintop10"]/div[@class="nacon"]/ul/li/a/text()')
         names=html.xpath('//div[@class="pleftmain"]/div[@class="nameall margintop10"]/div[@class="nacon"]/ul/li/a/text()')
         new_names=[name.replace('·','').strip() for name in names]
-        with open('Person.txt','a',encoding='utf-8') as out_data:
+        with open('names.txt','a',encoding='utf-8') as out_data:
             for name in new_names:
                 out_data.write(name+'\n')
         res.close()

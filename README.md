@@ -32,6 +32,13 @@
 ![](https://github.com/yanqiangmiffy/char-rnn-writer/blob/master/assets/result2.png)
 
 ## 生成名字
-自己爬取了一些名字，这个模型也可以用来生成名字,训练命令如下:
+
+自己从[名字大全](http://xm.99166.com/mzdq/)这个网站爬取所有形式组成的名字，爬取代码在`data\spider`目录下
+![](https://github.com/yanqiangmiffy/char-rnn-writer/blob/master/assets/name.png)
+
+这个模型也可以用来生成名字,训练命令如下:
 
 `python train.py --batch_size 64 --result_dir 'result/name' --model_prefix 'names' --epochs 50 --file_path 'data/names.txt'`
+
+测试结果
+![](https://github.com/yanqiangmiffy/char-rnn-writer/blob/master/assets/result3.png)
